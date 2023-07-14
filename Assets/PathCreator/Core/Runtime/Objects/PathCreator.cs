@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace PathCreation {
-    public class PathCreator : MonoBehaviour {
+namespace PathCreation 
+{
+    public class PathCreator : MonoBehaviour 
+    {
 
         /// This class stores data for the path editor, and provides accessors to get the current vertex and bezier path.
         /// Attach to a GameObject to create a new path editor.
@@ -17,9 +19,12 @@ namespace PathCreation {
         GlobalDisplaySettings globalEditorDisplaySettings;
 
         // Vertex path created from the current bezier path
-        public VertexPath path {
-            get {
-                if (!initialized) {
+        public VertexPath path 
+        {
+            get
+            {
+                if (!initialized) 
+                {
                     InitializeEditorData (false);
                 }
                 return editorData.GetVertexPath(transform);

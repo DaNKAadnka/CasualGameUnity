@@ -3,7 +3,8 @@ using PathCreation.Utility;
 using UnityEngine;
 
 
-namespace PathCreation {
+namespace PathCreation 
+{
     /// A vertex path is a collection of points (vertices) that lie along a bezier path.
     /// This allows one to do things like move at a constant speed along the path,
     /// which is not possible with a bezier path directly due to how they're constructed mathematically.
@@ -202,6 +203,12 @@ namespace PathCreation {
         public Vector3 GetPointAtTime (float t, EndOfPathInstruction endOfPathInstruction = EndOfPathInstruction.Loop) {
             var data = CalculatePercentOnPathData (t, endOfPathInstruction);
             return Vector3.Lerp (GetPoint (data.previousIndex), GetPoint (data.nextIndex), data.percentBetweenIndices);
+        }
+
+        public float GetPercentage(float t)
+        {
+            var percentage = t / length;
+            return percentage;
         }
 
         /// Gets forward direction on path based on 'time' (where 0 is start, and 1 is end of path).

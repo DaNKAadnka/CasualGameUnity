@@ -116,7 +116,8 @@ namespace PathCreationEditor {
                     Tools.hidden = !data.showTransformTool;
 
                     // Check if out of bounds (can occur after undo operations)
-                    if (handleIndexToDisplayAsTransform >= bezierPath.NumPoints) {
+                    if (handleIndexToDisplayAsTransform >= bezierPath.NumPoints) 
+                    {
                         handleIndexToDisplayAsTransform = -1;
                     }
 
